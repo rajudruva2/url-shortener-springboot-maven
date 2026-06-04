@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testapp15
+  namespace: testapp15
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: testapp15
+
+  template:
+    metadata:
+      labels:
+        app: testapp15
+
+    spec:
+      containers:
+      - name: testapp15
+
+        image: 443407534093.dkr.ecr.us-east-1.amazonaws.com/springboot:testapp15-latest
+
+        ports:
+        - containerPort: 8080
